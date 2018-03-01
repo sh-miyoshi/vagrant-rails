@@ -1,0 +1,14 @@
+- name: create directory for docker image
+  file: path=/home/vagrant/image state=directory
+- name: copy Dockerfile
+  copy: src=Dockerfile dest=/home/vagrant/image/Dockerfile
+
+- name: copy rails_server.sh
+  copy: src=rails_server.sh dest=/home/vagrant/image/rails_server.sh mode=0755
+
+- name: copy run shell
+  template: src=run.sh.j2 dest=/home/vagrant/run.sh mode=0755
+
+- name: copy stop shell
+  template: src=stop.sh.j2 dest=/home/vagrant/stop.sh mode=0755
+  

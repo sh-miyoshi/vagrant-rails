@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker stop rails
+docker rm rails
+rm -f /vagrant/data/{{appName}}/tmp/pids/server.pid
