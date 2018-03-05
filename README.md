@@ -3,7 +3,8 @@ vagrant-rails
 
 # Overview
 Windwos上にVagrantを使ってRuby on Rails環境を作るためのスクリプトです。  
-コマンド5個でrailsのトップ画面を表示できます
+コマンド5個でrailsのトップ画面を表示できます  
+しかも、ソースの編集はWindows上で行えます！
 
 # Prerequire
 このプログラムの実行にはあらかじめWindows上にVagrantをインストールしておく必要があります。  
@@ -22,6 +23,7 @@ Windwos上にVagrantを使ってRuby on Rails環境を作るためのスクリ�
 + ./run.sh
 
 + ブラウザで[http://localhost:3000](http://localhost:3000)にアクセス
++ /path/to/vagrant-rails/data/<your-app-name>内にrailsのアプリケーションが同期しています
 
 # Stop the Server
 サーバを止める際は以下のコマンドでできます。
