@@ -1,0 +1,23 @@
+- name: get ruby source code
+  get_url:
+    url: https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz
+    sha256sum: 9828d03852c37c20fa333a0264f2490f07338576734d910ee3fd538c9520846c
+    dest: /opt
+
+- name: decompress ruby tarball
+  unarchive:
+    src: /opt/ruby-2.5.3.tar.gz
+    dest: /opt
+    remote_src: yes
+
+- name: install ruby
+  shell: ./configure && make && make install
+  args:
+    chdir: /opt/ruby-2.5.3
+  become: yes
+
+- name: add rails start script
+  template:
+    src: start-rails.sh.j2
+    dest: /opt/start-rails.sh
+    mode: 0755

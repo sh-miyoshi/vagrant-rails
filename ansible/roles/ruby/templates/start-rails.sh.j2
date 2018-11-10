@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DATA_DIR=/vagrant/data
+
+rails -v > /dev/null 2>&1 || sudo -E gem install rails
+
+mkdir -p $DATA_DIR
+cd $DATA_DIR
+res=`ls .`
+if [ "x$res" = "x" ]; then
+	rails new {{ appName }}
+fi
+
+cd {{ appName }}
+rails server -b 0.0.0.0 -p 3000
