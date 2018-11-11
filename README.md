@@ -5,7 +5,6 @@
 Windwos上にVagrantを使ってRuby on Rails環境を作るためのスクリプトです。  
 コマンド3個でrailsのトップ画面を表示できます  
 しかも、ソースの編集はWindows上で行えます！
-(TODO)
 
 ## Prerequire
 
